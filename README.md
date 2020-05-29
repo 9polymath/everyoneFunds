@@ -1,2 +1,2 @@
-nine finance
-built using nextjs (a reactjs framework).
+everyoneFunds
+built using solidity & nextjs (a reactjs framework).
