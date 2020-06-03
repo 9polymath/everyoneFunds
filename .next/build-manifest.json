@@ -24,10 +24,6 @@
     "/_polyfills": [
       "static/runtime/polyfills.js"
     ],
-    "/campaigns/new": [
-      "static/runtime/webpack.js",
-      "static/runtime/main.js"
-    ],
     "/campaigns/show": [
       "static/runtime/webpack.js",
       "static/runtime/main.js"

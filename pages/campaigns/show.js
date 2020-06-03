@@ -107,8 +107,9 @@ class CampaignShow extends Component {
                         </Grid.Column>
                         <Grid.Column width={6}>
                             <ContributeForm address={this.props.address}/>
-                            <p>{this.props.location}</p>
-                            <p>{this.props.date}</p>
+                            <br/>
+                            <p><b> {this.props.location}</b></p>
+                            <p><b>{this.props.date}</b></p>
                         </Grid.Column>
                     </Grid.Row>
                     <Grid.Row>
