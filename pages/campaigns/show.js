@@ -97,7 +97,7 @@ class CampaignShow extends Component {
     render() {
         return (
             <Layout>
-                <h4> Campaign Details</h4>
+                <h4> Campaign Dashboard</h4>
                 <h2> {this.props.name}</h2>
                 <p> {this.props.description}</p>
                 <Grid>
