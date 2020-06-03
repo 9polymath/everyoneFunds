@@ -7,27 +7,23 @@ import { Router } from '../../routes';
 
 class CampaignNew extends Component {
     state ={
-        minimumDonation: '',
-        targetDonation: '',
         name: '',
         description: '',
-        media: '',
+        minimumDonation: '',
+        targetDonation: '',
         location: '',
         date: '',
-        links: '',
         errorMessage: '',
         loading: false
     };
     onSubmit = async (event) => {
         event.preventDefault();
         this.setState({loading:true, errorMessage: ''});
-        const {minimumDonation,
-                targetDonation,
-                } = this.state;
+        const {name, description, minimumDonation, targetDonation, location, date} = this.state;
         try {
             const accounts = await web3.eth.getAccounts();
             await everyoneFunds.methods
-                .createCampaign(minimumDonation, web3.utils.toWei(targetDonation, 'ether'))
+                .createCampaign(name, description, minimumDonation, web3.utils.toWei(targetDonation, 'ether'), location, date)
                 .send({
                     from: accounts[0]
                 });
@@ -43,6 +39,19 @@ class CampaignNew extends Component {
                 <h3> Create a New Campaign</h3>
                 <Form onSubmit = {this.onSubmit} error={!!this.state.errorMessage}>
                     <Form.Field>
+                        <label> Campaign Name</label>
+                        <Input
+                               value={this.state.name}
+                               onChange={event =>
+                                 this.setState({name: event.target.value})}
+                        />
+                        <label> Campaign Description</label>
+                        <TextArea
+                               value={this.state.description}
+                               placeholder = 'Description of Campaign'
+                               onChange={event =>
+                                 this.setState({description: event.target.value})}
+                        />
                         <label> Minimum Donation</label>
                         <Input label="wei"
                                labelPosition="right"
@@ -57,42 +66,17 @@ class CampaignNew extends Component {
                                onChange={event =>
                                  this.setState({targetDonation: event.target.value})}
                         />
-                        <label> Campaign Name</label>
-                        <Input
-                               value={this.state.name}
-                               onChange={event =>
-                                 this.setState({name: event.target.value})}
-                        />
-                        <label> Media</label>
-                        <Input
-                               value={this.state.media}
-                               onChange={event =>
-                                 this.setState({media: event.target.value})}
-                        />
-                        <label> Description</label>
-                        <TextArea
-                               placeholder = 'Description of Campaign'
-                               value={this.state.description}
-                               onChange={event =>
-                                 this.setState({description: event.target.value})}
-                        />
                         <label> Location</label>
                         <Input
                                value={this.state.location}
                                onChange={event =>
                                  this.setState({location: event.target.value})}
                         />
-                        <label> Date</label>
+                        <label> Start date</label>
                         <Input
                                value={this.state.date}
                                onChange={event =>
                                  this.setState({date: event.target.value})}
-                        />
-                        <label> Relevant Links</label>
-                        <Input
-                               value={this.state.links}
-                               onChange={event =>
-                                 this.setState({links: event.target.value})}
                         />
                     </Form.Field>
                     <Message error header="Oops!" content={this.state.errorMessage}/>

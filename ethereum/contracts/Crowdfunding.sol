@@ -4,8 +4,8 @@ contract everyoneFunds{
     address[] public deployedCampaigns;
     uint256 public indexOf;
 
-    function createCampaign(uint256 minimum, uint256 target) public{
-      address newCampaign = new Crowdfunding(minimum, msg.sender, target);
+    function createCampaign(string name, string description, uint256 minimum, uint256 target, string location, string date) public{
+      address newCampaign = new Crowdfunding(name, description, minimum, msg.sender, target, location, date);
        deployedCampaigns.push(newCampaign);
        indexOf = deployedCampaigns.length - 1;
     }
@@ -33,6 +33,10 @@ contract Crowdfunding{
     address public manager;
     uint256 public minimumContribution;
     uint256 public targetContribution;
+    string public campaignDescription;
+    string public campaignName;
+    string public campaignLocation;
+    string public campaignDate;
     mapping(address => bool) public approvers;
     uint256 public approversCount;
 
@@ -41,10 +45,14 @@ contract Crowdfunding{
         _;
     }
 
-    function Crowdfunding(uint256 minimum, address creator, uint256 target) public {
+    function Crowdfunding(string name, string description, uint256 minimum, address creator, uint256 target, string location, string date) public {
         manager = creator;
         minimumContribution = minimum;
         targetContribution = target;
+        campaignDescription = description;
+        campaignName = name;
+        campaignLocation = location;
+        campaignDate = date;
     }
 
     function contribute() public payable{
@@ -84,14 +92,18 @@ contract Crowdfunding{
 
     }
 
-    function getSummary() public view returns (uint256, uint256, uint256, uint256, uint256, address) {
+    function getSummary() public view returns (string, string, uint256, uint256, uint256, uint256, uint256, address, string, string) {
         return(
+        campaignName,
+        campaignDescription,
         minimumContribution,
         targetContribution,
         this.balance,
         requests.length,
         approversCount,
-        manager
+        manager,
+        campaignLocation,
+        campaignDate
         );
     }
 
@@ -101,7 +113,8 @@ contract Crowdfunding{
 
     function endCrowdfunding() public restricted{
         require(this.balance == 0);
-        selfdestruct(address(this));
+        selfdestruct(manager);
+
     }
 
 }

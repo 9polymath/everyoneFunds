@@ -17,13 +17,16 @@ class CampaignShow extends Component {
         const summary =  await campaign.methods.getSummary().call();
         return {
             address: props.query.address,
-            minimumDonation: summary[0],
-            targetDonation: summary[1],
-            balance: summary[2],
-            requestCount: summary[3],
-            approversCount: summary[4],
-            manager: summary[5],
-
+            name:summary[0],
+            description: summary[1],
+            minimumDonation: summary[2],
+            targetDonation: summary[3],
+            balance: summary[4],
+            requestCount: summary[5],
+            approversCount: summary[6],
+            manager: summary[7],
+            location: summary[8],
+            date: summary[9]
         };
     }
     onClick = async (event) => {
@@ -94,7 +97,9 @@ class CampaignShow extends Component {
     render() {
         return (
             <Layout>
-                <h3> Campaign Details</h3>
+                <h4> Campaign Details</h4>
+                <h2> {this.props.name}</h2>
+                <p> {this.props.description}</p>
                 <Grid>
                     <Grid.Row>
                         <Grid.Column width={10}>
@@ -102,6 +107,8 @@ class CampaignShow extends Component {
                         </Grid.Column>
                         <Grid.Column width={6}>
                             <ContributeForm address={this.props.address}/>
+                            <p>{this.props.location}</p>
+                            <p>{this.props.date}</p>
                         </Grid.Column>
                     </Grid.Row>
                     <Grid.Row>
