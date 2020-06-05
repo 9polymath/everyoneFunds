@@ -6,6 +6,8 @@ import web3 from '../../ethereum/web3';
 import ContributeForm from '../../components/ContributeForm';
 import {Link, Router} from '../../routes';
 import everyoneFunds from "../../ethereum/everyoneFunds";
+import utilStyles from '../../styles/utils.modules.css'
+import styles from '../../components/layout.module.css'
 
 class CampaignShow extends Component {
     state={
@@ -98,9 +100,20 @@ class CampaignShow extends Component {
         return (
             <Layout>
                 <h4> Campaign Dashboard</h4>
-                <h2> {this.props.name}</h2>
-                <p> {this.props.description}</p>
                 <Grid>
+                    <Grid.Row>
+                        <Grid.Column width={6}>
+                            <img
+                                src="/"
+                                className={`${styles.headerImage} ${utilStyles.borderCircle}`}
+                                alt="profile image"
+                            />
+                        </Grid.Column>
+                        <Grid.Column width={10}>
+                            <h2> {this.props.name}</h2>
+                        </Grid.Column>
+                    </Grid.Row>
+                    <p> {this.props.description}</p>
                     <Grid.Row>
                         <Grid.Column width={10}>
                             {this.renderCards()}

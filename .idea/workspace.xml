@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1581620b-8126-41cc-8a85-b432e99f617c" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.next/static/webpack/8b49c92255d99ea825a4.hot-update.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.next/cache/next-babel-loader/c4f614e830e68f60c59bc1ac35bc8a6e.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.next/cache/next-babel-loader/fb1c6947c521a829fb8c49dad2027592.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.next/static/webpack/ec1b83eaf6a194e6f2df.hot-update.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/utils.modules.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.next/server/static/development/pages/campaigns/show.js" beforeDir="false" afterPath="$PROJECT_DIR$/.next/server/static/development/pages/campaigns/show.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.next/server/static/development/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/.next/server/static/development/pages/index.js" afterDir="false" />
@@ -10,13 +13,8 @@
       <change beforePath="$PROJECT_DIR$/.next/static/development/pages/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/.next/static/development/pages/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.next/static/runtime/webpack.js" beforeDir="false" afterPath="$PROJECT_DIR$/.next/static/runtime/webpack.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.next/static/webpack/2609b2494e82930a3da7.hot-update.json" beforeDir="false" afterPath="$PROJECT_DIR$/.next/static/webpack/2609b2494e82930a3da7.hot-update.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.next/static/webpack/796d781de3297244cbeb.hot-update.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.next/static/webpack/818c296f03230f0e56a7.hot-update.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.next/static/webpack/83cf270a3fff1cecb810.hot-update.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.next/static/webpack/a3ced496e0a834011350.hot-update.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.next/static/webpack/b4445a1d318a342d8b65.hot-update.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.next/static/webpack/b4af0401d82d2c347ede.hot-update.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.next/static/webpack/static/development/pages/campaigns/show.js.b4445a1d318a342d8b65.hot-update.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.next/static/webpack/8b49c92255d99ea825a4.hot-update.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/campaigns/show.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/campaigns/show.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +119,7 @@
       <workItem from="1591030364540" duration="12470000" />
       <workItem from="1591206504168" duration="2241000" />
       <workItem from="1591290606217" duration="582000" />
-      <workItem from="1591382373126" duration="439000" />
+      <workItem from="1591382373126" duration="2000000" />
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'master' of https://github.com/nine-finance/everyoneFunds&#10;&#10;# Please enter a commit message to explain why this merge is necessary,&#10;# especially if it merges an updated upstream into a topic branch.&#10;#&#10;# Lines starting with '#' will be ignored, and an empty message aborts&#10;# the commit.">
       <created>1591210103812</created>
